@@ -55,14 +55,10 @@ public class ListJoin {
             String[] fields = line.split("\t");
 
             //使用hash 分解大文件 成多个小文件
-
-            int i = fields[0].hashCode() % 10;
-
-
-//            treeMap.put(Integer.parseInt(fields[1]), fields[0]);
-//            if(treeMap.size()>10){
-//                treeMap.remove(treeMap.lastKey());
-//            }
+            treeMap.put(Integer.parseInt(fields[1]), fields[0]);
+            if(treeMap.size()>10){
+                treeMap.remove(treeMap.lastKey());
+            }
         }
 
         Set<Integer> integers = treeMap.keySet();
